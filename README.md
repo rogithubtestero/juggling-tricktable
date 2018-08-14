@@ -1,8 +1,8 @@
-<img align="right" width="100" height="100" src="http://www.fillmurray.com/100/100">
+<img align="right" width="100" height="100" src="/static/logo.png">
 
 <h1 align="center">The Juggling Tricktable</h1>
 
-> An interactive table of juggling tricks as a single-page application, accessible from any internet capable device. Android App: [HERE](http://www.fillmurray.com/100/100).
+> An interactive list/table of juggling tricks as a single-page application, accessible from any internet capable device. Android App: [HERE](http://www.fillmurray.com/100/100).
 
 
 <p align="center">
@@ -37,9 +37,6 @@
 - [Uninstallation](#uninstallation)
 - [Contributing](#contributing)
 - [License](#license)
-
-
-
 
 
 
@@ -131,17 +128,15 @@ This software uses code from several open source packages and languages. Credits
 	<img src="https://c5.patreon.com/external/logo/become_a_patron_button@2x.png" width="160">
 </a>
 
-## You may also like...
 
-- [Pomolectron](https://github.com/amitmerchant1990/pomolectron) - A pomodoro app
-- [Correo](https://github.com/amitmerchant1990/correo) - A menubar/taskbar Gmail App for Windows and macOS
+## Contributing
+
+Contributing is especially important for this app. Because there are far too many tricks to clearly lay out in a table all by myself. So I need *your* help, for building the *ultimate* juggling tricktable. Have no fear. Its easy. Follow these steps:
+
 
 ## License
 
 MIT
 
----
-
-> [amitmerchant.com](https://www.amitmerchant.com) &nbsp;&middot;&nbsp;
-> GitHub [@amitmerchant1990](https://github.com/amitmerchant1990) &nbsp;&middot;&nbsp;
-> Twitter [@amit_merchant](https://twitter.com/amit_merchant)
+> <img style="vertical-align: middle;" width="24" src="https://raw.githubusercontent.com/encharm/Font-Awesome-SVG-PNG/master/black/png/32/globe.png"> [robinrosenstock.com](https://robinrosenstock.com)<br>
+> <img style="vertical-align: middle;" width="24" src="https://raw.githubusercontent.com/encharm/Font-Awesome-SVG-PNG/master/black/png/32/github.png"> [github.com/geniusupgrader](https://github.com/geniusupgrader)<br>
