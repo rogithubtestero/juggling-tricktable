@@ -136,7 +136,7 @@ Contributing is especially important for this app. Because there are far too man
 
 ## License
 
-MIT
+__MIT__. See [LICENSE.md](LICENSE.md)
 
 > <img style="vertical-align: middle;" width="24" src="https://raw.githubusercontent.com/encharm/Font-Awesome-SVG-PNG/master/black/png/32/globe.png"> [robinrosenstock.com](https://robinrosenstock.com)<br>
 > <img style="vertical-align: middle;" width="24" src="https://raw.githubusercontent.com/encharm/Font-Awesome-SVG-PNG/master/black/png/32/github.png"> [github.com/geniusupgrader](https://github.com/geniusupgrader)<br>
