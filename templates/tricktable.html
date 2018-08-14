@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Juggling Tricktable</title>
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="user-scalable=yes, initial-scale=1, maximum-scale=2, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+  <script src="https://unpkg.com/ag-grid/dist/ag-grid.min.noStyle.js"></script>
+  <!-- <script src="../jquery-oembed-all/jquery.oembed.js"></script> -->
+  <link rel="stylesheet" href="https://unpkg.com/ag-grid/dist/styles/ag-grid.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/ag-grid/dist/styles/ag-theme-balham.css">
+  <link href="//cdn.rawgit.com/noelboss/featherlight/1.7.13/release/featherlight.min.css" type="text/css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
+
+  <style>
+    body {
+      margin: 0px !important;
+    }
+
+    .cell-wrap-text {
+      white-space: normal !important;
+    }
+
+    .ag-header-cell {
+      padding-left: 5px !important;
+    }
+
+    .ag-cell {
+      font-size: 125% !important;
+      padding: 0px !important;
+
+    }
+
+    .ag-body-container {
+      padding-left: 5px !important;
+
+    }
+
+    .ag-header-cell-text {
+      font-size: 125% !important;
+    }
+
+    .ag-paging-button {
+      background-size: 32px 32px !important;
+      height: 32px !important;
+      width: 32px !important;
+      border: 2px !important;
+      opacity: unset !important;
+      transition-duration: 0.4s !important;
+    }
+
+    .ag-paging-button:hover {
+      background-color: LightGray !important;
+      color: white !important;
+    }
+
+    .featherlight-content {
+      height: 90% !important;
+      padding: 0px !important;
+      width: 90% !important;
+    }
+
+    .featherlight-loading {
+      height: 100% !important;
+      width: 100% !important;
+    }
+  </style>
+
+
+</head>
+
+<body>
+
+
+  <div class="button-bar">
+    <button onclick="sizeToFit()">Size to Fit</button>
+    <button onclick="autoSizeAll()">Auto-Size All</button>
+  </div>
+
+  <!-- <div id="myGrid" style="height:1000px; width:100%;" class="ag-theme-balham"></div> -->
+  <div id="myGrid" style="height:100%; width:100%; position:absolute; top:0; left:0;" class="ag-theme-balham"></div>
+
+
+  <script src="//code.jquery.com/jquery-latest.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@json-editor/json-editor/dist/jsoneditor.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+  <script src="//cdn.rawgit.com/noelboss/featherlight/1.7.13/release/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+</body>
+
+
+</html>
+
+
+<script type="text/javascript" charset="utf-8">
+  var columnDefs = [{
+      headerName: "Name",
+      field: "name",
+      cellClass: 'cell-wrap-text',
+      autoHeight: true
+    },
+    {
+      headerName: "Amount",
+      field: "amount",
+      width: 75,
+      minWidth: 35,
+    },
+    {
+      headerName: "Props",
+      field: "props",
+      cellClass: 'cell-wrap-text',
+      autoHeight: true,
+      width: 105
+    },
+    {
+      headerName: "Animation",
+      field: "animation",
+      editable: false,
+      cellRenderer: 'animationCellRenderer',
+      suppressFilter: true,
+      autoHeight: false,
+      width: 35,
+      minWidth: 35,
+    },
+    {
+      headerName: "Video",
+      field: "video",
+      editable: false,
+      cellRenderer: 'videoCellRenderer',
+      suppressFilter: true,
+      autoHeight: false,
+      width: 35,
+      minWidth: 35,
+    },
+    {
+      headerName: "Description",
+      field: "description",
+      cellClass: 'cell-wrap-text',
+      autoHeight: true
+    },
+    {
+      headerName: "Siteswap",
+      field: "siteswap",
+      cellClass: 'cell-wrap-text',
+      autoHeight: true,
+      width: 75,
+    },
+    {
+      headerName: "Edit",
+      field: "edit",
+      editable: false,
+      width: 75,
+      cellRenderer: 'editRenderer'
+    },
+  ];
+
+  var gridOptions = {
+    columnDefs: columnDefs,
+    enableSorting: true,
+    enableFilter: false,
+    enableColResize: true,
+    pagination: true,
+    paginationPageSize: 50,
+    floatingFilter: true,
+    onGridReady: function(params) {
+      params.columnApi.autoSizeColumns();
+    },
+    onColumnResized: onColumnResized,
+    rowSelection: 'multiple',
+    defaultColDef: {
+      editable: true
+    },
+    components: {
+      animationCellRenderer: animationCellRenderer,
+      videoCellRenderer: videoCellRenderer,
+      editRenderer: editRenderer,
+    }
+  };
+
+
+
+
+
+  function sizeToFit() {
+    gridOptions.api.sizeColumnsToFit();
+  }
+
+
+  function autoSizeAll() {
+    var allColumnIds = [];
+    gridOptions.columnApi.getAllColumns().forEach(function(column) {
+      allColumnIds.push(column.colId);
+    });
+    gridOptions.columnApi.autoSizeColumns(allColumnIds);
+  }
+
+  function getSelectedRows() {
+    var selectedNodes = gridOptions.api.getSelectedNodes()
+    var selectedData = selectedNodes.map(function(node) {
+      return node.data
+    })
+    var selectedDataStringPresentation = selectdeltaIndicatoredData.map(function(node) {
+      return node.make + ' ' + node.model
+    }).join(', ')
+    alert('Selected nodes: ' + selectedDataStringPresentation);
+  }
+
+
+  function animationCellRenderer(params) {
+    if (params.value && params.value !== "") {
+      this.eGui = document.createElement('div');
+      var value_begin = '<a class="test-popup-link btn btn-outline-secondary btn-sm" href="';
+      var link = params.value
+      // var value_end = '" class="tt btn btn-outline-secondary btn-sm">A</a>';
+      // <a class="test-popup-link" href="https://images.pexels.com/photos/257840/pexels-photo-257840.jpeg?auto=compress&cs=tinysrgb&h=350">Open popup</a>
+      // var value_end = '">A</a>'
+      var value_end =
+        '" data-featherlight="iframe" class="btn btn-outline-secondary btn-sm" data-featherlight-iframe-frameborder="0"  data-featherlight-iframe-allowfullscreen="true" data-featherlight-iframe-style="display:block;border:none;height:100%;width:100%;">A</a>';
+      // var value_end = '" data-featherlight="iframe" class="btn btn-outline-seconda0ry btn-sm" data-featherlight-iframe-frameborder="0"  data-featherlight-iframe-allowfullscreen="true" data-featherlight-iframe-style="display:block;border:none;height:85vh;width:85vw;">A</a>';
+      // this.eGui.innerHTML = value;
+      this.eGui.innerHTML = value_begin + link + value_end;
+
+      // this.eGui.innerHTML = '<a class="popup-iframe mfp-iframe btn btn-outline-secondary btn-sm" href="http://www.gunswap.co/">Working</a>'
+
+
+      // this.eGui.innerHTML = '<a class="popup-iframe btn btn-outline-secondary btn-sm" href="http://dimsemenov.com/plugins/magnific-popup/documentation.html">Working</a>'
+
+
+      return this.eGui;
+    }
+  }
+
+
+
+  function videoCellRenderer(params) {
+    if (params.value && params.value !== "") {
+      this.eGui = document.createElement('div');
+      var value_begin = '<a href="';
+      var link = params.value
+      var value_end =
+        '" data-featherlight="iframe" class="btn btn-outline-secondary btn-sm" data-featherlight-iframe-frameborder="0" data-featherlight-iframe-allow="autoplay; encrypted-media" data-featherlight-iframe-allowfullscreen="true" data-featherlight-iframe-style="display:block;border:none;height:100%;width:100%;">V</a>';
+      this.eGui.innerHTML = value_begin + link + value_end;
+      return this.eGui;
+    }
+  }
+
+
+
+
+  function onColumnResized(event) {
+    if (event.finished) {
+      gridOptions.api.resetRowHeights();
+    }
+  }
+
+
+
+
+
+  function editRenderer(params) {
+    this.eGui = document.createElement('div');
+
+    // this.gridOptions.getRowNodeId =
+    // text = params.data
+    var button = '<button class="testtest"  onclick="edit()">Edit</button>';
+    this.eGui.innerHTML = button;
+    return this.eGui;
+  }
+
+
+  function edit() {
+
+    //////////// code for getting the row data: //////////////////
+    focusedcell = gridOptions.api.getFocusedCell();
+    focusedcell_rowindex = focusedcell.rowIndex;
+    displayModel = gridOptions.api.getModel();
+    rowNode = displayModel.rowsToDisplay[focusedcell_rowindex];
+    console.log(rowNode);
+    rowNodeData = rowNode.data;
+    console.log(rowNodeData._id);
+  }
+
+
+
+  var requestURL = '../static/out.json';
+  var request = new XMLHttpRequest();
+  request.open('GET', requestURL);
+  request.responseType = 'json';
+  request.send();
+  request.onload = function() {
+    var superHeroes = request.response;
+    gridOptions.api.setRowData(superHeroes);
+  }
+
+
+  // setup the grid after the page has finished loading
+  document.addEventListener('DOMContentLoaded', function() {
+    var gridDiv = document.querySelector('#myGrid');
+    new agGrid.Grid(gridDiv, gridOptions);
+
+    var $input = $(
+      '<a href="http://127.0.0.1:5000/add" class="btn btn-outline-secondary btn-sm" data-featherlight="ajax" data-featherlight-iframe-frameborder="0" data-featherlight-iframe-allow="autoplay; encrypted-media" data-featherlight-iframe-allowfullscreen="true" data-featherlight-iframe-style="display:block;border:none;height:85vh;width:85vw;">Add</a>'
+    )
+
+    $(".ag-paging-panel").prepend($input);
+  });
+
+
+  $(document).ready(function() {
+    // jQuery methods go here...
+
+    $.featherlight.defaults.openSpeed = 1;
+    $.featherlight.defaults.closeSpeed = 1;
+  });
+</script>

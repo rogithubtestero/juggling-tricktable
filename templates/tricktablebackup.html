@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Juggling Tricktable</title>
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="viewport" content="user-scalable=yes, initial-scale=1, maximum-scale=2, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+<script src="https://unpkg.com/ag-grid/dist/ag-grid.min.noStyle.js"></script>
+ <link rel="stylesheet" href="https://unpkg.com/ag-grid/dist/styles/ag-grid.css">
+ <link rel="stylesheet" href="https://unpkg.com/ag-grid/dist/styles/ag-theme-balham.css">
+<link href="//cdn.rawgit.com/noelboss/featherlight/1.7.13/release/featherlight.min.css" type="text/css" rel="stylesheet" />
+<script src="https://hammerjs.github.io/dist/hammer.js"></script>
+
+ <style>
+
+body {
+  margin: 0px !important;
+}
+
+ .cell-wrap-text {
+    white-space: normal !important;
+}
+
+.ag-header-cell {
+  padding-left: 5px !important;
+}
+
+.ag-cell {
+  font-size: 150% !important;
+  padding: 0px !important;
+
+}
+
+.ag-body-container {
+  padding-left: 5px !important;
+
+}
+
+/* .ag-header {
+  font-size: 150% !important;
+} */
+
+.ag-header-cell-text {
+  font-size: 150% !important;
+
+}
+
+.ag-paging-button {
+  background-size: 32px 32px !important;
+  height: 32px !important;
+  width: 32px !important;
+  border: 2px !important;
+  opacity: unset !important;
+  transition-duration: 0.4s !important;
+}
+
+.ag-paging-button:hover {
+    background-color: LightGray !important;
+    color: white !important;
+}
+
+
+ </style>
+
+
+</head>
+<body>
+
+  <div class="button-bar">
+      <button onclick="sizeToFit()">Size to Fit</button>
+      <button onclick="autoSizeAll()">Auto-Size All</button>
+  </div>
+
+  <!-- <div id="myGrid" style="height:1000px; width:100%;" class="ag-theme-balham"></div> -->
+  <div id="myGrid" style="height:100%; width:100%; position:absolute; top:0; left:0;" class="ag-theme-balham"></div>
+
+
+<script src="//code.jquery.com/jquery-latest.js"></script>
+<script src="//cdn.rawgit.com/noelboss/featherlight/1.7.13/release/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+</body>
+
+
+</html>
+
+<script type="text/javascript" charset="utf-8">
+
+  var columnDefs = [
+    {
+      headerName: "Name",
+      field: "name",
+      cellClass: 'cell-wrap-text',
+      autoHeight: true
+    },
+    {
+      headerName: "Amount",
+      field: "amount",
+      width: 75,
+      minWidth:35,
+    },
+    {
+      headerName: "Props",
+      field: "props",
+      cellClass: 'cell-wrap-text',
+      autoHeight: true,
+      width: 105
+    },
+    {
+      headerName: "Animation",
+      field: "animation",
+      editable: false,
+      cellRenderer: 'animationCellRenderer',
+      suppressFilter: true,
+      autoHeight: false,
+      width:35,
+      minWidth:35,
+    },
+    {
+      headerName: "Video",
+      field: "video",
+      editable: false,
+      cellRenderer: 'videoCellRenderer',
+      suppressFilter: true,
+      autoHeight: false,
+      width:35,
+      minWidth:35,
+    },
+    {
+      headerName: "Description",
+      field: "description",
+      cellClass: 'cell-wrap-text',
+      autoHeight: true
+    },
+    {
+      headerName: "Siteswap",
+      field: "siteswap",
+      cellClass: 'cell-wrap-text',
+      autoHeight: true,
+      width:75,
+    },
+    {
+      headerName: "Edit",
+      field: "edit",
+      editable: false,
+      width:75,
+      cellRenderer: 'ageCellRendererFunc'
+    },
+  ];
+
+  var gridOptions = {
+    columnDefs: columnDefs,
+    enableSorting: true,
+    enableFilter: false,
+    enableColResize: true,
+    pagination: true,
+    paginationPageSize: 50,
+    floatingFilter: true,
+    onGridReady: function(params) {
+      params.columnApi.autoSizeColumns();
+    },
+    onColumnResized: onColumnResized,
+    rowSelection: 'multiple',
+    defaultColDef: { editable: true },
+    components:{
+        animationCellRenderer: AnimationCellRenderer,
+        videoCellRenderer: VideoCellRenderer,
+        ageCellRendererFunc: AgeCellRenderer,
+    }
+  };
+
+  function sizeToFit() {
+      gridOptions.api.sizeColumnsToFit();
+  }
+
+
+  function autoSizeAll() {
+      var allColumnIds = [];
+      gridOptions.columnApi.getAllColumns().forEach(function(column) {
+          allColumnIds.push(column.colId);
+      });
+      gridOptions.columnApi.autoSizeColumns(allColumnIds);
+  }
+
+  function getSelectedRows() {
+      var selectedNodes = gridOptions.api.getSelectedNodes()
+      var selectedData = selectedNodes.map( function(node) { return node.data })
+      var selectedDataStringPresentation = selectdeltaIndicatoredData.map( function(node) { return node.make + ' ' + node.model }).join(', ')
+      alert('Selected nodes: ' + selectedDataStringPresentation);
+  }
+
+
+  function AnimationCellRenderer() {
+  AnimationCellRenderer.prototype.init = function (params) {
+      if (params.value && params.value !== "") {
+        this.eGui = document.createElement('div');
+        var value_begin = '<a href="';
+        var link = params.value
+        var value_end = '" data-featherlight="image">  <img src="https://robinrosenstock.com/images/3ballcascade.png" height="25px" style="border:1px solid black">  </a>';
+        this.eGui.innerHTML = value_begin + link + value_end;
+      }
+  };
+}
+
+
+AnimationCellRenderer.prototype.getGui = function () {
+    return this.eGui;
+};
+
+
+  function VideoCellRenderer() {
+    VideoCellRenderer.prototype.init = function (params) {
+    if (params.value && params.value !== "") {
+      this.eGui = document.createElement('div');
+      var value_begin = '<a href="';
+      var link = params.value
+      var value_end = '" data-featherlight="image">  <img src="https://robinrosenstock.com/images/video-icon.svg" height="25px" style="border:1px solid black">  </a>';
+      this.eGui.innerHTML = value_begin + link + value_end;
+    }
+  };
+}
+
+VideoCellRenderer.prototype.getGui = function () {
+    return this.eGui;
+};
+
+
+
+  function onColumnResized(event) {
+      if (event.finished) {
+          gridOptions.api.resetRowHeights();
+      }
+  }
+
+
+
+
+
+
+var requestURL = '../static/tricktable.json';
+var request = new XMLHttpRequest();
+request.open('GET', requestURL);
+request.responseType = 'json';
+request.send();
+request.onload = function() {
+  var superHeroes = request.response;
+  gridOptions.api.setRowData(superHeroes);
+}
+
+
+
+function AgeCellRenderer(params) {
+  AgeCellRenderer.prototype.init = function (params) {
+  this.eGui = document.createElement('div');
+  var button = '<button class="testtest" onclick="sizeToFit()">Size to Fit</button>';
+  this.eGui.innerHTML = button;
+};
+}
+
+AgeCellRenderer.prototype.getGui = function () {
+    return this.eGui;
+};
+
+
+function ageClicked(age) {
+    window.alert("Age clicked: " + age);
+}
+
+
+
+function hammerIt(elm) {
+    hammertime = new Hammer(elm, {});
+    hammertime.get('pinch').set({
+        enable: true
+    });
+    var posX = 0,
+        posY = 0,
+        scale = 1,
+        last_scale = 1,
+        last_posX = 0,
+        last_posY = 0,
+        max_pos_x = 0,
+        max_pos_y = 0,
+        transform = "",
+        el = elm;
+
+    hammertime.on('pinch pinchend', function(ev) {
+        if (ev.type == "doubletap") {
+            transform =
+                "translate3d(0, 0, 0) " +
+                "scale3d(2, 2, 1) ";
+            scale = 2;
+            last_scale = 2;
+            try {
+                if (window.getComputedStyle(el, null).getPropertyValue('-webkit-transform').toString() != "matrix(1, 0, 0, 1, 0, 0)") {
+                    transform =
+                        "translate3d(0, 0, 0) " +
+                        "scale3d(1, 1, 1) ";
+                    scale = 1;
+                    last_scale = 1;
+                }
+            } catch (err) {}
+            el.style.webkitTransform = transform;
+            transform = "";
+        }
+
+
+        //pinch
+        if (ev.type == "pinch") {
+            scale = Math.max(.999, Math.min(last_scale * (ev.scale), 4));
+        }
+        if(ev.type == "pinchend"){last_scale = scale;}
+
+        // //panend
+        // if(ev.type == "panend"){
+        //     last_posX = posX < max_pos_x ? posX : max_pos_x;
+        //     last_posY = posY < max_pos_y ? posY : max_pos_y;
+        // }
+
+        if (scale != 1) {
+            transform =
+                "translate3d(" + posX + "px," + posY + "px, 0) " +
+                "scale3d(" + scale + ", " + scale + ", 1)";
+        }
+
+        if (transform) {
+            el.style.webkitTransform = transform;
+        }
+    });
+}
+
+
+
+
+// setup the grid after the page has finished loading
+document.addEventListener('DOMContentLoaded', function () {
+    var gridDiv = document.querySelector('#myGrid');
+    new agGrid.Grid(gridDiv, gridOptions);
+    var $input = $('<button class="" onclick="sizeToFit()">Size to Fit</button>');
+    // $input.appendTo($("ag-paging-panel"));
+    // $input.appendTo($("ag-root-wrapper-body"));
+    // $input.appendTo($("ag-layout-normal"));
+    $( ".ag-paging-panel" ).prepend( $input );
+});
+
+
+
+
+
+// # ag-paging-panel
+
+// hammerIt(document.getElementById("myGrid"));
+
+
+</script>
