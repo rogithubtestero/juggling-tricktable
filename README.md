@@ -1,5 +1,6 @@
+<a href="http://robinrosenstock.com/juggling/tricktable">
 <img align="right" width="100" height="100" src="/static/logo.png">
-
+</a>
 <h1 align="center">The Juggling Tricktable</h1>
 
 > An interactive list/table of juggling tricks as a single-page application, accessible from any internet capable device. Android App: [HERE](http://www.fillmurray.com/100/100).
@@ -32,10 +33,7 @@
     - [Development](#development)
     - [Deployment](#deployment)
 - [How to use](#how-to-use)
-- [Custom configurations](#custom-configurations)
-- [Updating](#updating)
-- [Uninstallation](#uninstallation)
-- [Contributing](#contributing)
+    - [Contributing](#contributing)
 - [License](#license)
 
 
@@ -49,74 +47,78 @@
 * Sync Scrolling
   - While you type, LivePreview will automatically scroll to the current location you're editing.
 * GitHub Flavored Markdown  
-* Syntax highlighting
-* [KaTeX](https://khan.github.io/KaTeX/) Support
-* Dark/Light mode
-* Toolbar for basic Markdown formatting
-* Supports multiple cursors
-* Save the Markdown preview as PDF
-* Emoji support in preview :tada:
-* App will keep alive in tray for quick usage
-* Full screen mode
-  - Write distraction free.
-* Cross platform
-  - Windows, Mac and Linux ready.
 
 
 
-## Installation
+## Development
 
 
-### Development
+### Dependencies
+
+#### with pip:
+
+Having [Python](https://www.python.org/) and [pip](https://pypi.org/project/pip/) already installed, Go on with:
+
+```bash
+pip install Flask
+
+```
+
+#### OR within [Arch](https://www.archlinux.org/):
+
+```bash
+sudo pacman -S python-flask
+```
+
+### Local
 
 
+To clone and run this application, you'll need [git](https://git-scm.com). From your command line clone the repo and execute the coresponding flask commands.
+
+```bash
+git clone git@github.com:geniusupgrader/juggling-tricktable.git
+cd electron-markdownify
+npm start
+```
+
+Then go to: [127.0.0.1:5000](http://127.0.0.1:5000).
 
 
 ### Deployment
 
+Refer to your hosting service for exact guidance. Here it is shown and demonstrated how to deploy to one of the best hosting services: __[uberspace](https://uberspace.de/)__.
+
+The commands are really quite similiar as a local installtion. They're slightly different only because of the shared hosting principle.
+
+
+
 
 ## How To Use
 
-To clone and run this application, you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. From your command line:
-
-```bash
-# Clone this repository
-$ git clone https://github.com/amitmerchant1990/electron-markdownify
-
-# Go into the repository
-$ cd electron-markdownify
-
-# Install dependencies
-$ npm install
-
-# Run the app
-$ npm start
-```
-
-Note: If you're using Linux Bash for Windows, [see this guide](https://www.howtogeek.com/261575/how-to-run-graphical-linux-desktop-applications-from-windows-10s-bash-shell/) or use `node` from the command prompt.
+No need for an installation.
+For using this just go [HERE](http://robinrosenstock.com/juggling/tricktable).
 
 
-## Download
 
-You can [download](https://github.com/amitmerchant1990/electron-markdownify/releases/tag/v1.2.0) latest installable version of Markdownify for Windows, macOS and Linux.
+### Download
 
 
 
 ## Libraries
 
-This software uses code from several open source packages and languages. Credits to them (referencing repos):
+This software uses code from several open source packages. Credits to them (referencing repos):
 
 - [flask](https://github.com/pallets/flask)
 - [ag-grid](https://github.com/ag-grid/ag-grid)
-- [javascript](https://github.com/chjj/marked)
-- [showdown](http://showdownjs.github.io/showdown/)
-- [CodeMirror](http://codemirror.net/)
-- Emojis are taken from [here](https://github.com/arvida/emoji-cheat-sheet.com)
-- [highlight.js](https://highlightjs.org/)
+- [featherlight](https://github.com/noelboss/featherlight)
+-  [json-editor](https://github.com/json-editor/json-editor)
 
-## Related
 
-[markdownify-web](https://github.com/amitmerchant1990/markdownify-web) - Web version of Markdownify
+
+__Related__:
+
+- [Android App: Juggling tricktable](https://github.com/amitmerchant1990/markdownify-web) - Android version of the juggling tricktable
+
 
 ## Support
 
