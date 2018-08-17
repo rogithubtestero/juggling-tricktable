@@ -3,7 +3,7 @@
 </a>
 <h1 align="center">The <i>ultimate</i> Juggling Tricktable</h1>
 
-> An interactive list/table of juggling tricks as a single-page application, accessible from any internet capable device. Android App: [HERE](http://www.fillmurray.com/100/100).
+> An interactive list/table of juggling tricks as a single-page application, accessible from any internet capable device. Android App [HERE](http://www.fillmurray.com/100/100).
 
 
 
