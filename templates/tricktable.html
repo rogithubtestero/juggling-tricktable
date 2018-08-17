@@ -281,6 +281,13 @@
     console.log(rowNodeData._id);
   }
 
+  function delete_cache() {
+    gridOptions.api.expireValueCache();
+    gridOptions.api.refreshCells();
+    window.location.reload(true);
+    location.reload(true);
+    console.log("test");
+  }
 
 
   var requestURL = '../static/tricktable.json';
@@ -305,11 +312,9 @@
     $(".ag-paging-panel").prepend(add_button);
     
     var reload_button = $(
-      '<a href="http://127.0.0.1:5000/reload_table" class="btn btn-outline-secondary btn-sm">Reload</a>'
+      '<a href="http://127.0.0.1:5000/reload_table" onclick="delete_cache();" class="btn btn-outline-secondary btn-sm">Reload</a>'
     )    
     $(".ag-paging-panel").prepend(reload_button);
-    
-    
     
   });
 

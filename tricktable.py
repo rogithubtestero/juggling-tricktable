@@ -4,12 +4,10 @@ from flask import request
 from flask import redirect
 from flask import jsonify
 from bson.objectid import ObjectId
-
-
+from flask_debug import Debug
 
 app = Flask(__name__)
-
-
+Debug(app)
 
 
 def jsonToMongo():
@@ -59,7 +57,7 @@ def square():
 
 @app.route('/add/')
 def add():
-    return render_template('static/jsoneditor.html')
+    return render_template('jsoneditor.html')
 
 
 
@@ -73,6 +71,7 @@ def reload_table():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
 
 
 
