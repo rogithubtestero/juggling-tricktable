@@ -283,7 +283,7 @@
 
 
 
-  var requestURL = '../static/out.json';
+  var requestURL = '../static/tricktable.json';
   var request = new XMLHttpRequest();
   request.open('GET', requestURL);
   request.responseType = 'json';
@@ -299,11 +299,18 @@
     var gridDiv = document.querySelector('#myGrid');
     new agGrid.Grid(gridDiv, gridOptions);
 
-    var $input = $(
+    var add_button = $(
       '<a href="http://127.0.0.1:5000/add" class="btn btn-outline-secondary btn-sm" data-featherlight="ajax" data-featherlight-iframe-frameborder="0" data-featherlight-iframe-allow="autoplay; encrypted-media" data-featherlight-iframe-allowfullscreen="true" data-featherlight-iframe-style="display:block;border:none;height:85vh;width:85vw;">Add</a>'
     )
-
-    $(".ag-paging-panel").prepend($input);
+    $(".ag-paging-panel").prepend(add_button);
+    
+    var reload_button = $(
+      '<a href="http://127.0.0.1:5000/reload_table" class="btn btn-outline-secondary btn-sm">Reload</a>'
+    )    
+    $(".ag-paging-panel").prepend(reload_button);
+    
+    
+    
   });
 
 

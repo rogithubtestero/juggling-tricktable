@@ -1,6 +1,7 @@
 from flask import Flask
 from flask import render_template
 from flask import request
+from flask import redirect
 from flask import jsonify
 from bson.objectid import ObjectId
 
@@ -8,41 +9,6 @@ from bson.objectid import ObjectId
 
 app = Flask(__name__)
 
-
-@app.route('/')
-def home():
-    return render_template('tricktable.html')
-
-@app.route('/square/')
-def square():
-    # num = float(request.form.get('number', 0))
-    data = "muffputter"
-    return data
-
-
-@app.route('/add/')
-def add():
-    return render_template('jsoneditor.html')
-
-
-
-#
-# @app.route('/')
-# def hello_world():
-#     message = "nigger"
-#     return render_template('tricktable.html', message=message)
-#
-#
-if __name__ == '__main__':
-    app.run(debug=True)
-#
-
-
-
-
-
-# this should be an ajax callback:
-# thing = db.things.find_one({'_id': ObjectId('4ea113d6b684853c8e000001') })
 
 
 
@@ -74,17 +40,45 @@ def mongoToJson():
     r = db.jugglingtricktable.find()
     ll = list(r)
 
-    with open('out.json', "x") as out:
+    with open('static/tricktable.json', "w") as out:
         out.write(json_util.dumps(ll))
 
 
 
 
+@app.route('/')
+def home():
+    return render_template('tricktable.html')
+
+@app.route('/square/')
+def square():
+    # num = float(request.form.get('number', 0))
+    data = "muffputter"
+    return data
+
+
+@app.route('/add/')
+def add():
+    return render_template('static/jsoneditor.html')
+
+
+
+@app.route('/reload_table/')
+def reload_table():
+    mongoToJson()
+    return redirect("/", code=302)
 
 
 
 
+if __name__ == '__main__':
+    app.run(debug=True)
 
+
+
+
+# this should be an ajax callback:
+# thing = db.things.find_one({'_id': ObjectId('4ea113d6b684853c8e000001') })
 
 
 
