@@ -277,88 +277,57 @@
   "description": "",
   "siteswap": "",
   "animation": "",
-  "video": "https://www.youtube.com/watch?v=JEI1IGE1EsI"
+  "video": "https://www.youtube.com/embed/JEI1IGE1EsI"
 },
 
+{ "props": "balls",
+  "amount": 3,
+  "name":"1-up Pirouette",
+  "description": "",
+  "siteswap": "",
+  "animation": "",
+  "video": ""
+},
 
 { "props": "clubs",
   "amount": 3,
-  "name":"alberts",
+  "name":"1-up Pirouette",
   "description": "",
   "siteswap": "",
   "animation": "",
   "video": ""
 },
 
-{ "props": "",
-  "amount": "",
-  "name":"Pirouettes",
+{ "props": "rings",
+  "amount": 3,
+  "name":"1-up Pirouette",
   "description": "",
   "siteswap": "",
   "animation": "",
   "video": ""
 },
 
-{ "props": "",
-  "amount": "",
-  "name":"contorsion",
+{ "props": "balls",
+  "amount": 3,
+  "name":"3-up Pirouette",
   "description": "",
   "siteswap": "",
   "animation": "",
   "video": ""
 },
 
-{ "props": "",
-  "amount": "",
-  "name":"body bouncing",
-  "description": "",
-  "siteswap": "",
-  "animation": "",
-  "video": "http://www.jugglingworld.biz/tricks/juggling-tricks/3-ball-juggling-tricks-page/"
-},
-
-
-{ "props": "",
-  "amount": "",
-  "name":"clamp under armpit",
+{ "props": "clubs",
+  "amount": 3,
+  "name":"3-up Pirouette",
   "description": "",
   "siteswap": "",
   "animation": "",
   "video": ""
 },
 
-{ "props": "",
-  "amount": "",
-  "name":"clamp under armpit",
-  "description": "",
-  "siteswap": "",
-  "animation": "",
-  "video": ""
-},
-
-{ "props": "",
-  "amount": "",
-  "name":"flash",
-  "description": "",
-  "siteswap": "",
-  "animation": "",
-  "video": ""
-},
-
-
-{ "props": "",
-  "amount": "",
-  "name":"surprise",
-  "description": "Holding extra props in hand — only throwing them when needed — then back to number before. aka surprise",
-  "siteswap": "",
-  "animation": "",
-  "video": ""
-},
-
-
-{ "props": "",
-  "amount": "",
-  "name":"under the leg",
+{ "props": "rings",
+  "amount": 3,
+  "name":"3-up Pirouette",
   "description": "",
   "siteswap": "",
   "animation": "",
@@ -368,12 +337,135 @@
 
 { "props": "balls",
   "amount": 3,
-  "name":"Cascade",
+  "name":"single bounce on ellbow",
+  "description": "",
+  "siteswap": "",
+  "animation": "",
+  "video": "http://www.jugglingworld.biz/tricks/juggling-tricks/3-ball-juggling-tricks-page/"
+},
+
+{ "props": "balls",
+  "amount": 3,
+  "name":"single bounce on head",
+  "description": "",
+  "siteswap": "",
+  "animation": "",
+  "video": "http://www.jugglingworld.biz/tricks/juggling-tricks/3-ball-juggling-tricks-page/"
+},
+
+
+{ "props": "balls",
+  "amount": 3,
+  "name":"clamp under armpit",
   "description": "",
   "siteswap": "",
   "animation": "",
   "video": ""
 },
+
+{ "props": "clubs",
+  "amount": 3,
+  "name":"clamp under armpit",
+  "description": "",
+  "siteswap": "",
+  "animation": "",
+  "video": ""
+},
+
+
+{ "props": "rings",
+  "amount": 3,
+  "name":"clamp under armpit",
+  "description": "",
+  "siteswap": "",
+  "animation": "",
+  "video": ""
+},
+
+{ "props": "balls",
+  "amount": 3,
+  "name":"flash",
+  "description": "",
+  "siteswap": "",
+  "animation": "",
+  "video": ""
+},
+
+{ "props": "clubs",
+  "amount": 3,
+  "name":"flash",
+  "description": "",
+  "siteswap": "",
+  "animation": "",
+  "video": ""
+},
+
+{ "props": "rings",
+  "amount": 3,
+  "name":"flash",
+  "description": "",
+  "siteswap": "",
+  "animation": "",
+  "video": ""
+},
+
+
+{ "props": "balls",
+  "amount": 5,
+  "name":"surprise",
+  "description": "Holding two extra balls in each hand — only throwing them when needed — then back to three as before",
+  "siteswap": "",
+  "animation": "",
+  "video": ""
+},
+
+{ "props": "clubs",
+  "amount": 5,
+  "name":"surprise",
+  "description": "Holding two extra clubs in each hand — only throwing them when needed — then back to three as before",
+  "siteswap": "",
+  "animation": "",
+  "video": ""
+},
+
+{ "props": "rings",
+  "amount": 5,
+  "name":"surprise",
+  "description": "Holding two extra rings in each hand — only throwing them when needed — then back to three as before",
+  "siteswap": "",
+  "animation": "",
+  "video": ""
+},
+
+
+{ "props": "balls",
+  "amount": 3,
+  "name":"under the leg",
+  "description": "",
+  "siteswap": "",
+  "animation": "",
+  "video": ""
+},
+
+{ "props": "clubs",
+  "amount": 3,
+  "name":"under the leg",
+  "description": "",
+  "siteswap": "",
+  "animation": "",
+  "video": ""
+},
+
+
+{ "props": "rings",
+  "amount": 3,
+  "name":"Under the leg",
+  "description": "",
+  "siteswap": "",
+  "animation": "",
+  "video": ""
+},
+
 
 { "props": "balls",
   "amount": 3,
@@ -393,32 +485,16 @@
   "video": ""
 },
 
+
 { "props": "balls",
   "amount": 3,
-  "name":"3-Ball Flash",
+  "name":"Claw catches",
   "description": "",
   "siteswap": "",
   "animation": "",
   "video": ""
 },
 
-{ "props": "balls",
-  "amount": 3,
-  "name":"Above the Head",
-  "description": "",
-  "siteswap": "",
-  "animation": "",
-  "video": ""
-},
-
-{ "props": "balls",
-  "amount": 3,
-  "name":"Claw",
-  "description": "",
-  "siteswap": "",
-  "animation": "",
-  "video": ""
-},
 
 { "props": "balls",
   "amount": 3,
@@ -429,23 +505,94 @@
   "video": ""
 },
 
-{ "props": "balls",
-  "amount": 3,
-  "name":"Sky High",
-  "description": "throw one ball extremely high",
-  "siteswap": "",
-  "animation": "",
-  "video": ""
-},
 
-{ "props": "balls",
+{ "props": "rings",
   "amount": 3,
-  "name":"Under the Leg",
+  "name":"Juggler's Tennis",
   "description": "",
   "siteswap": "",
   "animation": "",
   "video": ""
 },
+
+
+{ "props": "rings",
+  "amount": 3,
+  "name":"Claw catches",
+  "description": "",
+  "siteswap": "",
+  "animation": "",
+  "video": ""
+},
+
+
+{ "props": "rings",
+  "amount": 3,
+  "name":"Infinity",
+  "description": "",
+  "siteswap": "",
+  "animation": "",
+  "video": ""
+},
+
+{ "props": "clubs",
+  "amount": 3,
+  "name":"Juggler's Tennis",
+  "description": "",
+  "siteswap": "",
+  "animation": "",
+  "video": ""
+},
+
+
+{ "props": "clubs",
+  "amount": 3,
+  "name":"Claw catches",
+  "description": "",
+  "siteswap": "",
+  "animation": "",
+  "video": ""
+},
+
+
+{ "props": "clubs",
+  "amount": 3,
+  "name":"Infinity",
+  "description": "",
+  "siteswap": "",
+  "animation": "",
+  "video": ""
+},
+
+
+{ "props": "balls",
+  "amount": 3,
+  "name":"Sky High",
+  "description": "throw one prop extremely high, the other two waiting",
+  "siteswap": "",
+  "animation": "",
+  "video": ""
+},
+
+
+{ "props": "clubs",
+  "amount": 3,
+  "name":"Sky High",
+  "description": "throw one prop extremely high, the other two waiting",
+  "siteswap": "",
+  "animation": "",
+  "video": ""
+},
+
+{ "props": "rings",
+  "amount": 3,
+  "name":"Sky High",
+  "description": "throw one prop extremely high, the other two waiting",
+  "siteswap": "",
+  "animation": "",
+  "video": ""
+},
+
 
 { "props": "balls",
   "amount": 3,
@@ -467,15 +614,6 @@
 
 { "props": "balls",
   "amount": 3,
-  "name":"Backcrosses",
-  "description": "",
-  "siteswap": "",
-  "animation": "",
-  "video": ""
-},
-
-{ "props": "balls",
-  "amount": 3,
   "name":"Frankenstein",
   "description": "",
   "siteswap": "",
@@ -485,9 +623,9 @@
 
 { "props": "balls",
   "amount": 3,
-  "name":"Snake, 50505",
+  "name":"Snake",
   "description": "",
-  "siteswap": "",
+  "siteswap": "50505",
   "animation": "",
   "video": ""
 },
@@ -504,10 +642,10 @@
 { "props": "balls",
   "amount": 3,
   "name":"Arm Roll",
-  "description": "http://juggling-for-beginners.com/juggling-tricks/arm-roll/",
+  "description": "",
   "siteswap": "",
   "animation": "",
-  "video": ""
+  "video": "http://juggling-for-beginners.com/juggling-tricks/arm-roll/"
 },
 
 { "props": "balls",
@@ -519,16 +657,70 @@
   "video": ""
 },
 
-{ "props": "balls",
+{ "props": "clubs",
   "amount": 3,
-  "name":"Reversed windmill",
-  "description": "http://www.jugglinginstructions.com/videos/reversed-windmill.html",
+  "name":"Windmill",
+  "description": "",
+  "siteswap": "",
+  "animation": "",
+  "video": ""
+},
+
+{ "props": "rings",
+  "amount": 3,
+  "name":"Windmill",
+  "description": "",
   "siteswap": "",
   "animation": "",
   "video": ""
 },
 
 { "props": "balls",
+  "amount": 3,
+  "name":"Reversed Windmill",
+  "description": "",
+  "siteswap": "",
+  "animation": "",
+  "video": ""
+},
+
+{ "props": "clubs",
+  "amount": 3,
+  "name":"Reversed Windmill",
+  "description": "",
+  "siteswap": "",
+  "animation": "",
+  "video": ""
+},
+
+{ "props": "rings",
+  "amount": 3,
+  "name":"Reversed Windmill",
+  "description": "",
+  "siteswap": "",
+  "animation": "",
+  "video": ""
+},
+
+{ "props": "balls",
+  "amount": 3,
+  "name":"Shower",
+  "description": "",
+  "siteswap": "",
+  "animation": "",
+  "video": ""
+},
+
+{ "props": "clubs",
+  "amount": 3,
+  "name":"Shower",
+  "description": "",
+  "siteswap": "",
+  "animation": "",
+  "video": ""
+},
+
+{ "props": "rings",
   "amount": 3,
   "name":"Shower",
   "description": "",
@@ -546,6 +738,24 @@
   "video": ""
 },
 
+{ "props": "clubs",
+  "amount": 3,
+  "name":"False Shower",
+  "description": "",
+  "siteswap": "",
+  "animation": "",
+  "video": ""
+},
+
+{ "props": "rings",
+  "amount": 3,
+  "name":"False Shower",
+  "description": "",
+  "siteswap": "",
+  "animation": "",
+  "video": ""
+},
+
 { "props": "balls",
   "amount": 3,
   "name":"High-Low Shower",
@@ -554,6 +764,25 @@
   "animation": "",
   "video": ""
 },
+
+{ "props": "clubs",
+  "amount": 3,
+  "name":"High-Low Shower",
+  "description": "",
+  "siteswap": "",
+  "animation": "",
+  "video": ""
+},
+
+{ "props": "rings",
+  "amount": 3,
+  "name":"High-Low Shower",
+  "description": "",
+  "siteswap": "",
+  "animation": "",
+  "video": ""
+},
+
 
 { "props": "balls",
   "amount": 3,
@@ -564,7 +793,43 @@
   "video": ""
 },
 
+{ "props": "rings",
+  "amount": 3,
+  "name":"Chops",
+  "description": "",
+  "siteswap": "",
+  "animation": "",
+  "video": ""
+},
+
+{ "props": "clubs",
+  "amount": 3,
+  "name":"Chops",
+  "description": "",
+  "siteswap": "",
+  "animation": "",
+  "video": ""
+},
+
 { "props": "balls",
+  "amount": 3,
+  "name":"Columns",
+  "description": "",
+  "siteswap": "",
+  "animation": "",
+  "video": ""
+},
+
+{ "props": "rings",
+  "amount": 3,
+  "name":"Columns",
+  "description": "",
+  "siteswap": "",
+  "animation": "",
+  "video": ""
+},
+
+{ "props": "clubs",
   "amount": 3,
   "name":"Columns",
   "description": "",
@@ -603,15 +868,6 @@
 { "props": "balls",
   "amount": 3,
   "name":"Tornado",
-  "description": "",
-  "siteswap": "",
-  "animation": "",
-  "video": ""
-},
-
-{ "props": "balls",
-  "amount": 3,
-  "name":"Circles",
   "description": "",
   "siteswap": "",
   "animation": "",
@@ -673,9 +929,27 @@
 },
 
 { "props": "balls",
+  "amount": 4,
+  "name":"Mills Mess",
+  "description": "",
+  "siteswap": "",
+  "animation": "",
+  "video": ""
+},
+
+{ "props": "balls",
+  "amount": 5,
+  "name":"Mills Mess",
+  "description": "",
+  "siteswap": "",
+  "animation": "",
+  "video": ""
+},
+
+{ "props": "balls",
   "amount": 3,
   "name":"Reverse Arms",
-  "description": "(Arms are crossed), best with best in alternation with mills mess",
+  "description": "(Arms are crossed)",
   "siteswap": "",
   "animation": "",
   "video": ""
@@ -756,7 +1030,7 @@
 { "props": "balls",
   "amount": 3,
   "name":"Slow Shuffle",
-  "description": "http://www.jugglinginstructions.com/videos/slow-shuffle.html",
+  "description": "",
   "siteswap": "",
   "animation": "",
   "video": ""
@@ -772,6 +1046,15 @@
 },
 
 { "props": "balls",
+  "amount": 3,
+  "name":"Box",
+  "description": "",
+  "siteswap": "",
+  "animation": "",
+  "video": ""
+},
+
+{ "props": "clubs",
   "amount": 3,
   "name":"Box",
   "description": "",

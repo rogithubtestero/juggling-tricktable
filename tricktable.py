@@ -62,7 +62,7 @@ def jsonToMongo():
     db.jugglingtricktable.insert_many(jsondata)
 
 
-def mongotoJson():
+def mongoToJson():
 
     from pymongo import MongoClient
     from bson import json_util
