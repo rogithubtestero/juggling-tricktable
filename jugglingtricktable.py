@@ -45,33 +45,40 @@ if __name__ == '__main__':
 # thing = db.things.find_one({'_id': ObjectId('4ea113d6b684853c8e000001') })
 
 
-#
-# def import_json():
-#
-#     from pymongo import MongoClient
-#     from bson import json_util
-#
-#     client = MongoClient()
-#     # client = MongoClient('localhost',27017)
-#
-#     db = client.db
-#
-#     with open('static/tricktable.json') as f:
-#         data = f.read()
-#
-#     jsondata = json_util.loads(data)
-#     db.jugglingtricktable.insert_many(jsondata)
-#
-#     r = db.jugglingtricktable.find()
-#
-#     ll = list(r)
-#
-#
-#     with open('out.json', "x") as out:
-#         out.write(json_util.dumps(ll))
-#
-#
-#
+
+def jsonToMongo():
+
+    from pymongo import MongoClient
+    from bson import json_util
+
+    client = MongoClient()
+    # client = MongoClient('localhost',27017)
+    db = client.db
+
+    with open('static/tricktable.json') as f:
+        data = f.read()
+
+    jsondata = json_util.loads(data)
+    db.jugglingtricktable.insert_many(jsondata)
+
+
+def mongotoJson():
+
+    from pymongo import MongoClient
+    from bson import json_util
+
+    client = MongoClient()
+    # client = MongoClient('localhost',27017)
+    db = client.db
+
+    r = db.jugglingtricktable.find()
+    ll = list(r)
+
+    with open('out.json', "x") as out:
+        out.write(json_util.dumps(ll))
+
+
+
 
 
 
