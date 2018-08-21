@@ -5,41 +5,41 @@ from flask import render_template
 from flask import request
 from flask import redirect
 from flask import jsonify
-from bson.objectid import ObjectId
+# from bson.objectid import ObjectId
 
 app = Flask(__name__)
 
-
-def jsonToMongo():
-
-    from pymongo import MongoClient
-    from bson import json_util
-
-    client = MongoClient()
-    # client = MongoClient('localhost',27017)
-    db = client.db
-
-    with open('static/tricktable.json') as f:
-        data = f.read()
-
-    jsondata = json_util.loads(data)
-    db.jugglingtricktable.insert_many(jsondata)
-
-
-def mongoToJson():
-
-    from pymongo import MongoClient
-    from bson import json_util
-
-    client = MongoClient()
-    # client = MongoClient('localhost',27017)
-    db = client.db
-
-    r = db.jugglingtricktable.find()
-    ll = list(r)
-
-    with open('static/tricktable.json', "w") as out:
-        out.write(json_util.dumps(ll))
+# 
+# def jsonToMongo():
+# 
+#     from pymongo import MongoClient
+#     from bson import json_util
+# 
+#     client = MongoClient()
+#     # client = MongoClient('localhost',27017)
+#     db = client.db
+# 
+#     with open('static/tricktable.json') as f:
+#         data = f.read()
+# 
+#     jsondata = json_util.loads(data)
+#     db.jugglingtricktable.insert_many(jsondata)
+# 
+# 
+# def mongoToJson():
+# 
+#     from pymongo import MongoClient
+#     from bson import json_util
+# 
+#     client = MongoClient()
+#     # client = MongoClient('localhost',27017)
+#     db = client.db
+# 
+#     r = db.jugglingtricktable.find()
+#     ll = list(r)
+# 
+#     with open('static/tricktable.json', "w") as out:
+#         out.write(json_util.dumps(ll))
 
 
 
@@ -48,23 +48,23 @@ def mongoToJson():
 def home():
     return render_template('tricktable.html')
 
-@app.route('/square/')
-def square():
-    # num = float(request.form.get('number', 0))
-    data = "muffputter"
-    return data
+# @app.route('/square/')
+# def square():
+#     # num = float(request.form.get('number', 0))
+#     data = "muffputter"
+#     return data
 
 
-@app.route('/add/')
-def add():
-    return render_template('jsoneditor.html')
+# @app.route('/add/')
+# def add():
+#     return render_template('jsoneditor.html')
 
 
 
-@app.route('/reload_table/')
-def reload_table():
-    mongoToJson()
-    return redirect("/", code=302)
+# @app.route('/reload_table/')
+# def reload_table():
+#     mongoToJson()
+#     return redirect("/", code=302)
 
 
 

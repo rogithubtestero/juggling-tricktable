@@ -290,7 +290,8 @@
   }
 
 
-  var requestURL = '../static/tricktable.json';
+  // var requestURL = '../static/tricktable.json';
+  var requestURL = "{{url_for('static', filename='tricktable.json') }}";
   var request = new XMLHttpRequest();
   request.open('GET', requestURL);
   request.responseType = 'json';
