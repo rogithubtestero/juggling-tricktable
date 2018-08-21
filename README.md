@@ -85,14 +85,42 @@ We are using flask as a micro web framework. From [these](https://blog.lucas-hil
 
 
 ```bash
-cd ~
-mkdir juggling-tricktable
-cd juggling-tricktable
-git clone git@github.com:geniusupgrader/juggling-tricktable.git
-
 pip3.6 install flask --user
 pip3.6 install flup --user
+cd ~
+git clone git@github.com:geniusupgrader/juggling-tricktable.git
+cd fcgi-bin  # change to the fcgi folder
+nano tricktable.fcgi
 ```
+Fill tricktable.fcgi with this content:
+
+```python
+#!/usr/bin/env python3.6
+
+import sys
+sys.path.insert(0, "/home/USERNAME/flaskapplication")
+from app import app
+
+from flup.server.fcgi_fork import WSGIServer
+WSGIServer(app).run()
+```
+
+Then use `.htaccess` for a clean url and redirecting:
+
+```
+RewriteRule ^flaskapplication /fcgi-bin/flaskapplication.fcgi/ \[QSA,L\]
+RewriteRule ^flaskapplication/(.*)$ /fcgi-bin/flaskapplication.fcgi/$1 \[QSA,L\]
+```
+
+
+
+
+For other tutorials (on uberspace) see:
+
+- https://github.com/JonasGroeger/flask-uberspace-quickstart
+- https://gist.github.com/dAnjou/2007865
+- http://jonasgroeger.de/projekte/blog/projekt-flask-auf-dem-hoster-uberspace-blitzschnell-mit-hubschen-urls-aufsetzen/
+
 
 
 
