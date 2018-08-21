@@ -71,7 +71,7 @@ To clone and run this application, you'll need [git](https://git-scm.com). From 
 ```bash
 git clone git@github.com:geniusupgrader/juggling-tricktable.git
 cd juggling-tricktable
-export FLASK_APP=juggling-tricktable.py
+export FLASK_APP=tricktable.py
 flask run
 ```
 
