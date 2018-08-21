@@ -81,11 +81,17 @@ Then go to: [127.0.0.1:5000](http://127.0.0.1:5000).
 ### Deployment
 
 Refer to your hosting service for exact guidance. Here it is shown and demonstrated how to deploy to one of the best hosting services: __[uberspace](https://uberspace.de/)__.
+We are using flask as a micro web framework. From [these](https://blog.lucas-hild.de/flask-uberspace) instructions:
 
-The commands are really quite similiar as a local installtion. They're slightly different only because of the shared hosting principle.
 
 ```bash
-commands --> todo
+cd ~
+mkdir juggling-tricktable
+cd juggling-tricktable
+git clone git@github.com:geniusupgrader/juggling-tricktable.git
+
+pip3.6 install flask --user
+pip3.6 install flup --user
 ```
 
 

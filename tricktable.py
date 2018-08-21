@@ -1,3 +1,5 @@
+#!/usr/bin/env python3.6
+
 from flask import Flask
 from flask import render_template
 from flask import request
@@ -67,9 +69,8 @@ def reload_table():
 
 
 
-if __name__ == '__main__':
-    app.run(debug=True)
-
+if __name__ == "__main__":
+    app.run()
 
 
 
