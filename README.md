@@ -105,11 +105,12 @@ from flup.server.fcgi_fork import WSGIServer
 WSGIServer(app).run()
 ```
 
-Then use `.htaccess` for a clean url and redirecting:
+Then use `.htaccess` for a clean url and redirecting (this comes into your "html" folder):
 
 ```
-RewriteRule ^flaskapplication /fcgi-bin/flaskapplication.fcgi/ \[QSA,L\]
-RewriteRule ^flaskapplication/(.*)$ /fcgi-bin/flaskapplication.fcgi/$1 \[QSA,L\]
+RewriteEngine on
+RewriteBase /
+RewriteRule juggling-tricktable /fcgi-bin/tricktable.fcgi/
 ```
 
 
