@@ -3,7 +3,7 @@
 </a>
 <h1 align="center">The <i>ultimate</i> Juggling Tricktable</h1>
 
-> An interactive list/table of juggling tricks as a single-page application, accessible from any internet capable device. Android App [HERE](http://www.fillmurray.com/100/100).
+> An interactive list/table of juggling tricks as a single-page application, accessible from any internet capable device.
 
 
 
@@ -15,13 +15,13 @@
 # Table of contents
 
 - [Features](#features)
+- [How to use](#how-to-use)
+    - [Contributing](#contributing)
+    - [Downloading](#downloading)
 - [Development](#development)
     - [Dependencies](#dependencies)
     - [Local](#local)
     - [Deployment](#deployment)
-- [How to use](#how-to-use)
-    - [Contributing](#contributing)
-    - [Downloading](#downloading)
 - [Libraries](#libraries)
 - [Support](#support)
 - [License](#license)
@@ -41,6 +41,43 @@
 * Links to animations, with the help of [gunswap.co](http://gunswap.co)
 * Accessible from everywhere and every device (though Javascript must be enabled)
 * Easy editing (See [Contributing](#contributing))
+
+
+
+
+## How To Use
+
+No need for an installation.
+For using this just go [HERE](http://robinrosenstock.com/juggling/tricktable).
+
+
+
+### Video
+
+When there is a Website with a video explaining/showing the trick just copy the whole website link and paste it into the "video" field in the json editor. But better way is to use an embed-link from the video directly. To find an embed link to the video is different where the video is hosted.
+
+For Youtube use this:
+
+1. Share (to the right of "I-dislike-this-Button")
+2. Embed
+3. Copy __only__ the embed link, e.g: https://www.youtube.com/embed/JEI1IGE1EsI
+4. Paste it into the json editor
+
+
+
+
+### Contributing
+
+Contributing is especially important for this app. Because there are far too many tricks to clearly lay out in a table all by myself. So I need *your* help, for building the *ultimate* juggling tricktable. Have no fear. Its easy. Follow these steps:
+
+
+
+### Download
+
+
+
+
+
 
 
 ## Development
@@ -123,36 +160,6 @@ For other tutorials (on uberspace) see:
 - http://jonasgroeger.de/projekte/blog/projekt-flask-auf-dem-hoster-uberspace-blitzschnell-mit-hubschen-urls-aufsetzen/
 
 
-
-
-## How To Use
-
-No need for an installation.
-For using this just go [HERE](http://robinrosenstock.com/juggling/tricktable).
-
-
-
-### Video
-
-When there is a Website with a video explaining/showing the trick just copy the whole website link and paste it into the "video" field in the json editor. But better way is to use an embed-link from the video directly. To find an embed link to the video is different where the video is hosted.
-
-For Youtube use this:
-
-1. Share (to the right of "I-dislike-this-Button")
-2. Embed
-3. Copy __only__ the embed link, e.g: https://www.youtube.com/embed/JEI1IGE1EsI
-4. Paste it into the json editor
-
-
-
-
-### Contributing
-
-Contributing is especially important for this app. Because there are far too many tricks to clearly lay out in a table all by myself. So I need *your* help, for building the *ultimate* juggling tricktable. Have no fear. Its easy. Follow these steps:
-
-
-
-### Download
 
 
 
