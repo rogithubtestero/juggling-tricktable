@@ -47,8 +47,26 @@
 
 ## How To Use
 
-No need for an installation.
-For using this just go [HERE](http://robinrosenstock.com/juggling/tricktable).
+
+No need for an installation. Just go    [here](https://robinrosenstock.com/juggling-tricktable) and use it.
+
+Make use of the filter!
+
+
+### Contributing
+
+Contributing is especially important for this app. Because there are far too many tricks to clearly lay out in a table all by myself. So I need *your* help, for building the *ultimate* juggling tricktable.
+
+For now, it is not that easy to add a new trick. Follow these steps:
+
+1. Login to github
+2. Go to https://github.com/geniusupgrader/juggling-tricktable/blob/master/static/tricktable.json
+3. Hit "Edit this file"
+4. make your changes (orient yourself on the available entries) -> Propose file changes
+5. Hit "Create Pull request"
+
+
+
 
 
 
@@ -64,11 +82,6 @@ For Youtube use this:
 4. Paste it into the json editor
 
 
-
-
-### Contributing
-
-Contributing is especially important for this app. Because there are far too many tricks to clearly lay out in a table all by myself. So I need *your* help, for building the *ultimate* juggling tricktable. Have no fear. Its easy. Follow these steps:
 
 
 
